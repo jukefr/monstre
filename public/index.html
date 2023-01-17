@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>monstre</title>
+    <meta name="description" content="a batch emoji icon generator" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link href="main.css" rel="stylesheet" />
+    <style>
+      a:hover {
+        background-color: transparent !important;
+        text-decoration: underline;
+      }
+
+      .monstre-convert:focus {
+        background-color: #ff5555;
+      }
+    </style>
+  </head>
+
+  <body class="terminal">
+    <div class="container">
+      <hr />
+      <a
+        href="https://code.eutychia.org/kay/monstre"
+        target="_blank"
+        class="btn btn-error btn-ghost btn-block"
+        >get the source code for this project</a
+      >
+      <br />
+      <main>
+        <form id="form">
+          <fieldset>
+            <legend>
+              <h1>monstre, a batch emoji icon generator</h1>
+            </legend>
+            <div class="form-group" style="text-align: center; display: none">
+              <canvas
+                alt="this is used to render the icons and not displayed to the user"
+                id="glCanvas"
+                width="512"
+                height="512"
+              ></canvas>
+            </div>
+            <div class="form-group">
+              <label for="icon_size">icon size in pixels</label>
+              <input type="text" id="icon_size" placeholder="512" value="512" />
+            </div>
+            <div class="form-group">
+              <label for="emoji_size">emoji size in pixels</label>
+              <input
+                type="text"
+                id="emoji_size"
+                placeholder="384"
+                value="384"
+              />
+            </div>
+            <div class="form-group">
+              <label for="contrast_ratio"
+                >minimum contrast ratio, higher value means easier to read, but
+                backgrounds may be less random</label
+              >
+              <input
+                type="text"
+                id="contrast_ratio"
+                placeholder="2.5"
+                value="2.5"
+              />
+            </div>
+            <div class="form-group">
+              <label for="background_colors"
+                >background colors, randomly picked from acceptable contrast
+                ratios for each emoji</label
+              >
+              <textarea
+                cols="30"
+                id="background_colors"
+                name="background_colors"
+                rows="10"
+              >#282A36&#10;#F8F8F2&#10;#44475A&#10;#6272A4&#10;#FF5555&#10;#FFB86C&#10;#F1FA8C&#10;#50FA7B&#10;#BD93F9&#10;#8BE9FD&#10;#FF79C6</textarea
+              >
+            </div>
+            <div class="form-group">
+              <label for="emojis"
+                >emojis, one icon generated per line, only emojis get
+                rendered</label
+              >
+              <textarea cols="30" id="emojis" name="emojis" rows="10">🤖&#10;📖&#10;❤️🔥&#10;🐵&#10;🐵&#10;this text wont
+              get exported but you can try converting it&#10;🎄 🎄&#10;🥺</textarea
+              >
+              <p>
+                you can also type words or sentences and use the api below to
+                try and match them to an emoji automatically
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="api_key"
+                >convert words or sentences to emojis via a free third party api
+                <b>(optional)</b></label
+              >
+              <div class="same-line">
+                <input
+                  id="api_key"
+                  name="api_key"
+                  type="text"
+                  value=""
+                  placeholder="api key would go here"
+                  style="width: 70%"
+                />
+                <button
+                  class="btn monstre-convert"
+                  onclick="monstre_convert()"
+                  style="width: 20%"
+                >
+                  convert
+                </button>
+              </div>
+              <p>
+                <a
+                  style="color: #6272a4 !important"
+                  href="https://t3chflicks.org/Login/"
+                  target="_blank"
+                  >you can register for a free api key with 100 credits (1 emoji
+                  translation is one credit) over here</a
+                >
+              </p>
+            </div>
+            <div class="form-group" style="text-align: center">
+              <button class="btn btn-default" onclick="monstre_save()">
+                generate and pack icons into a zip (go!)
+              </button>
+            </div>
+          </fieldset>
+        </form>
+      </main>
+      <hr />
+    </div>
+    <script src="libs/FileSaver.min.js"></script>
+    <script src="libs/jszip.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
