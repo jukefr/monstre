@@ -3,7 +3,7 @@ make png icons for project with background colors and emojis available on monstr
 
 ## install
 
-latest version is available at https://monstre.comfy.center/
+latest version is available at https://juke.fr/monstre/
 
 ## features
 
