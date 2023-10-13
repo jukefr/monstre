@@ -1,6 +1,5 @@
 # [monstre](https://codeberg.org/juke/monstre)
-
-make png icons for project with background colors and emojis available on monstre.comfy.center
+make png icons for project with background colors and emojis available on monstre.juke.fr/
 
 ## install
 
@@ -13,6 +12,7 @@ latest version is available at https://monstre.juke.fr/
 - can also convert words or sentences to emojis via a free external "natural language processing" api
 - generates a zip archive
 
+
 ## Development
 
 To clone the repository locally:
@@ -23,12 +23,11 @@ $ git clone https://codeberg.org/juke/monstre.git
 
 ## Contributing
 
-More to come later.
+Feel free to contact via the email bellow with a patch or anything.
 
 ### Issues
-
-More to come later.
+Open new issues by mailing [issues+monstre@juke.fr](mailto:issues+monstre@juke.fr)
 
 ---
-
 beep boop
+
